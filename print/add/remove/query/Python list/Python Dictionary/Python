@@ -1,0 +1,27 @@
+dict={'china':143,'india':136,'usa':32,'pakistan':21} 
+#This data is not accurate and is given just for experiment.So don't take it personally LOL.
+call=str(input('print/add/remove/query:'))
+
+def printing():
+    for key in dict:
+        print(key,'==>',dict[key])
+if call == 'print' :
+    printing()
+elif call == 'add':
+    new_count = str(input(''))
+    if new_count in dict:
+        print('Country is already available')
+    else:
+        population = int(input())
+        dict[new_count]=population
+        printing()
+elif call == 'remove':
+    remove_count = str(input(''))
+    if remove_count in dict:
+        del dict[remove_count]
+        printing()
+    else:
+        print("This country doesn't exist.")
+elif call == 'query':
+    data = str(input(''))
+    print(dict[data])
